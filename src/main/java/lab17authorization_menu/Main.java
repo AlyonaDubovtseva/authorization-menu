@@ -1,11 +1,13 @@
 package lab17authorization_menu;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 
     private static final String ADMIN_LOGIN = "Admin_Alyona@gmail.com";
-    private static final String ADMIN_PASSWORD = "BOSS+12345";
+    private static final String ADMIN_PASSWORD = "111111111";
     private static final String USER_LOGIN = "User_Galina228@gmail.com";
     private static final String USER_PASSWORD = "00000000";
 
@@ -46,16 +48,15 @@ public class Main {
 
 
     public static Role userCheck(String login, String password) throws WrongLoginException, WrongPasswordException {
+
         if (!login.matches("[A-Za-z0-9@._-]{20,}")) {
             throw new WrongLoginException("Логин должен содержать не менее 20 символов: буквы, цифры и @._-");
         }
 
-        // Проверка пароля
-        if (!password.matches("[A-Za-z0-9{}\\[\\](),.&;?!_-+]{8,}")) {
+        if (!password.matches("[A-Za-z0-9{}\\[\\](),.&;?!-+]{8,}")) {
             throw new WrongPasswordException("Пароль должен содержать не менее 8 символов: буквы, цифры и {}[](),.&;?!_-+");
         }
 
-        // Сравнение с предопределёнными значениями
         if (ADMIN_LOGIN.equals(login) && ADMIN_PASSWORD.equals(password)) {
             return Role.ADMIN;
         } else if (USER_LOGIN.equals(login) && USER_PASSWORD.equals(password)) {
