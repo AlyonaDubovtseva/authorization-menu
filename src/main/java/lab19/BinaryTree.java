@@ -2,7 +2,7 @@ package lab19;
 
 public abstract class BinaryTree {
 
-    private ITree root;
+    protected ITree root;
 
     public void buildTree(int[] array) {
         for(int i = 0; i < array.length; i++) {
@@ -11,6 +11,9 @@ public abstract class BinaryTree {
     }
 
     public ITree addLeaf(int n, ITree node) {
+
+        if(node == null) {return new Node(n);}
+
         if (n > node.value()) {
             if(node.right() == null) {
                 Node usel = new Node(n);
