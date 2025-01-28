@@ -1,8 +1,6 @@
 package lab17authorization_menu;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
 
