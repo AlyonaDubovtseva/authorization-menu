@@ -11,8 +11,8 @@ public class Right extends BinaryTree {
 
     private void rightTraversal(ITree node){
         if(node == null) {return;}
+        System.out.print(node.value() + ", ");
         rightTraversal(node.left());
         rightTraversal(node.right());
-        System.out.print(node.value() + ", ");
     }
 }

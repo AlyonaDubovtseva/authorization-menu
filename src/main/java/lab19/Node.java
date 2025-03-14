@@ -5,8 +5,6 @@ public class Node implements ITree {
     private ITree right;
     private ITree left;
 
-    public Node(){}
-
     public Node(int value) {
         this.value = value;
     }

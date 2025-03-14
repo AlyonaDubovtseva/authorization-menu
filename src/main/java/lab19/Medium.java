@@ -10,8 +10,8 @@ public class Medium extends BinaryTree {
 
     private void mediumTraversal(ITree node) {
         if(node == null) {return;}
-        System.out.print(node.value() + ", ");
         mediumTraversal(node.left());
         mediumTraversal(node.right());
+        System.out.print(node.value() + ", ");
     }
 }
