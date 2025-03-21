@@ -1,4 +1,4 @@
-package lab2_1;
+package lesson1;
 
 public class List403Impl implements List403 {
     private Integer [] values;
@@ -54,7 +54,7 @@ public class List403Impl implements List403 {
 
     public void sort(boolean asc) {
         if(asc) {
-            for (int i = size - 1; i >= 1 ; i--) { //Переменная i с каждым новым проходом смещается все левее, чтобы не затрагивать значения, уже отсортированные в правую часть массива.
+            for (int i = size - 1; i >= 1 ; i--) {
                 for (int j = 0; j < i; j++) {
                     if(values[j] > values[j + 1]) {
                         toSwap(j, j + 1);
