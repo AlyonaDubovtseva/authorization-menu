@@ -1,12 +1,15 @@
-package lesson2_4;
+package lesson4;
+
+import lesson2_4.NoSuchElementException;
+import lesson2_4.Set;
 
 import java.lang.reflect.Array;
 
-public class SetImpl<T> implements Set<T>{
+public class Set3Impl<T> implements Set3<T> {
     private Object [] values;
     private int size;
 
-    public SetImpl() {
+    public Set3Impl() {
         this.values = new Object[10];
         this.size = 0;
     }

@@ -1,6 +1,6 @@
 package lab13;
 
-/*public class Main5 {
+public class Main5 {
     public static void main(String[] args) {
         Apple[] apples = {new Apple(120, "Голд"),
                 new Apple(110, "Семеринка")};
@@ -12,4 +12,4 @@ package lab13;
             }
         });
     }
-}*/
+}

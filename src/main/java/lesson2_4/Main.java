@@ -13,8 +13,11 @@ public class Main {
         System.out.println(set);
         set.add(2);
         System.out.println(set);
-
-
         System.out.println(set.contains(2));
+        
+        Integer a[] = set.getAll(new Integer[0]);
+        for(Integer i : a) {
+            System.out.println(i);
+        }
     }
 }

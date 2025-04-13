@@ -20,17 +20,18 @@ public class Auto {
 
         Auto auto = (Auto) object;
 
-        return year == auto.year &&
+        if (year == auto.year &&
                 horsepower == auto.horsepower &&
-                (model == null ? auto.model == null : model.equals(auto.model)) &&
-                (color == null ? auto.color == null : color.equals(auto.color));
+                model.equals(auto.model) &&
+                color.equals(auto.color)) return true;
+        return false;
     }
     @Override
     public String toString() {
         return "Auto" +
-                " model='" + model + '\'' +
-                ", year=" + year +
-                ", color='" + color + '\'' +
-                ", horsepower=" + horsepower;
+                " model ='" + model + '\'' +
+                ", year =" + year +
+                ", color ='" + color + '\'' +
+                ", horsepower =" + horsepower;
     }
 }

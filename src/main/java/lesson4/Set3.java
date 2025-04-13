@@ -1,6 +1,6 @@
-package lesson2_4;
+package lesson4;
 
-public interface Set<T> {
+public interface Set3<T> {
 
         int size();
 

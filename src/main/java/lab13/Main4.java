@@ -1,6 +1,6 @@
 package lab13;
 
-/*public class Main4 {
+public class Main4 {
     public static void main(String[] args) {
         Apple[] apples = {new Apple(120, "Голд"),
                 new Apple(110, "Семеринка")};
@@ -15,4 +15,4 @@ package lab13;
 
         ArrayUtils.sort(apples, comparator);
     }
-}*/
+}

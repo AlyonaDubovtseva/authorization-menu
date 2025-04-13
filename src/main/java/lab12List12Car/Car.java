@@ -10,6 +10,9 @@ public class Car implements CanCompare {
         this.horsepower = horsepower;
         this.price = price;
     }
+    public void drive() {
+        System.out.println("car is driving");
+    }
 
     public int getHorsepower() {
         return horsepower;

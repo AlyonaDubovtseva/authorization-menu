@@ -14,6 +14,13 @@ public class Set2Impl<T> implements Set2<T> {
         return size;
     }
 
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Индекс вне границ: " + index);
+        }
+        return (T) values[index];
+    }
+
     public boolean contains(T element) {
         for (int i = 0; i < size; i++) {
             if (values[i].equals(element)) {
@@ -65,6 +72,10 @@ public class Set2Impl<T> implements Set2<T> {
 
     @Override
     public String toString() {
-        return Arrays.toString(getAll());
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < size; i++) {
+            stringBuilder.append(values[i].toString()).append(" ");
+        }
+        return stringBuilder.toString();
     }
 }

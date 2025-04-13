@@ -19,6 +19,7 @@ public class Main {
         System.out.println(set);
         set.add(new Auto("Toyota", 210, 2020, "Black"));
         System.out.println(set);
+        set.get(1);
 
     }
 
