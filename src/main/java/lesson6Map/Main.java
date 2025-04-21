@@ -27,9 +27,10 @@ public class Main {
 
         System.out.println(map.isEmpty());
 
-        System.out.println(map.keySet());
-        System.out.println(map.values());
+        System.out.println("All keys: " + map.keySet());
+        System.out.println("All values: " + map.values());
 
+        for(Map.Entry<Integer, String> entry : map) System.out.println(entry.getKey() + " => " + entry.getValue());
         map.clear();
         System.out.println(map.isEmpty());
 

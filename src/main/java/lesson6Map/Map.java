@@ -3,7 +3,7 @@ package lesson6Map;
 import lesson2_3.LinkedList;
 import lesson2_4.Set;
 
-public interface Map<K, V> {
+public interface Map<K, V> extends Iterable<Map.Entry<K, V>>{
     void put(K key, V value);
 
     V get(K kye);

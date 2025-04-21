@@ -5,7 +5,10 @@ import lesson2_3.LinkedListImpl;
 import lesson2_4.Set;
 import lesson2_4.SetImpl;
 
-public class MapImpl<K, V> implements Map<K, V> {
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class MapImpl<K, V> implements Map<K, V>, Iterable<Map.Entry<K, V>> {
     public Node<K, V>[] array;
     private int size;
 
@@ -15,6 +18,52 @@ public class MapImpl<K, V> implements Map<K, V> {
 
         public Node(K key, V value) {
             this.value = new EntryImpl<>(key, value);
+        }
+    }
+    @Override
+    public Iterator<Entry<K, V>> iterator() {
+        return new MapIterator();
+    }
+    public class MapIterator implements Iterator<Map.Entry<K, V>> {
+        private int currentIndex;
+        private Node<K, V> currentNode = null;
+
+        public MapIterator() {
+            goToNext();
+        }
+
+        @Override
+        public boolean hasNext() {
+            return currentNode != null;
+        }
+
+        @Override
+        public Entry<K, V> next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+
+            Entry<K, V> result = currentNode.value;
+            currentNode = currentNode.next;
+
+            if (currentNode == null) {
+                currentIndex++;
+                goToNext();
+            }
+
+            return result;
+        }
+
+        private void goToNext() {
+            while (currentIndex < array.length && array[currentIndex] == null) {
+                currentIndex++;
+            }
+
+            if (currentIndex < array.length) {
+                currentNode = array[currentIndex];
+            } else {
+                currentNode = null;
+            }
         }
     }
 
